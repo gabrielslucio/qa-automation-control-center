@@ -15,7 +15,8 @@ function redactSensitiveData(value){
     
     return value
         .replace(/Authorization:\s*Basic\s+[A-Za-z0-9+/=._-]+/gi, 'Authorization: Basic [REDACTED]')
-        .replace(/Authorization:\s*Bearer\s+[A-Za-z0-9+/=._-]+/gi, 'Authorization: Bearer [REDACTED]');
+        .replace(/Authorization:\s*Bearer\s+[A-Za-z0-9+/=._-]+/gi, 'Authorization: Bearer [REDACTED]')
+        .replace(/x-api-key:\s*[A-Za-z0-9+/=._-]+/gi,'x-api-key: [REDACTED]');
 };
 
 async function startTestRun({grep, project}) {
