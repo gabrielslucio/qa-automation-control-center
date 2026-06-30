@@ -61,6 +61,7 @@ class RequestApi {
     const response = await this.request.post(endpoint, {
       data,
       headers: this.authHeaders,
+      timeout: 90000,
     });
 
     if (!response.ok()) {
@@ -83,6 +84,7 @@ class RequestApi {
 
     const response = await this.request.get(endpoint, {
       headers: this.authHeaders,
+      timeout: 90000,
     });
 
     const bodyText = await response.text();
@@ -139,6 +141,7 @@ class RequestApi {
 
     const response = await this.request.get(endpoint, {
       headers: this.authHeaders,
+      timeout: 90000,
     });
 
     const bodyText = await response.text();
